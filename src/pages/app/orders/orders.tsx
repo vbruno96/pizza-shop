@@ -1,12 +1,9 @@
-import { ArrowRight, Search, X } from 'lucide-react'
 import { Helmet } from 'react-helmet-async'
 
-import { Button } from '@/components/ui/button'
-import { Input } from '@/components/ui/input'
+import { Pagination } from '@/components/pagination'
 import {
   Table,
   TableBody,
-  TableCell,
   TableHead,
   TableHeader,
   TableRow,
@@ -21,7 +18,7 @@ export function Orders() {
       <Helmet title="Pedidos" />
       <div className="flex flex-col gap-4">
         <h1 className="text-3xl font-bold tracking-tight">Pedidos</h1>
-        <div className="5 space-y-2">
+        <div className="space-y-2.5">
           <OrderTableFilters />
 
           <div className="rounded-md border">
@@ -44,8 +41,8 @@ export function Orders() {
                 ))}
               </TableBody>
             </Table>
-            O
           </div>
+          <Pagination pageIndex={0} totalCount={105} perPage={10} />
         </div>
       </div>
     </>
