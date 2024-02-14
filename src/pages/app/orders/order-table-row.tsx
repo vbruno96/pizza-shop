@@ -6,8 +6,8 @@ import { OrderStatus } from '@/components/order-status'
 import { Button } from '@/components/ui/button'
 import { Dialog, DialogTrigger } from '@/components/ui/dialog'
 import { TableCell, TableRow } from '@/components/ui/table'
-
-import { OrderDetail } from './order-detail'
+import { OrderDetail } from '@/pages/app/orders/order-detail'
+import { formatCurrencyValue } from '@/utils/formatCurrencyValue'
 
 interface OrderTableRowProps {
   order: {
@@ -47,10 +47,7 @@ export function OrderTableRow({ order }: OrderTableRowProps) {
       </TableCell>
       <TableCell className="font-medium">{order.customerName}</TableCell>
       <TableCell className="font-medium">
-        {order.total.toLocaleString('pt-BR', {
-          style: 'currency',
-          currency: 'BRL',
-        })}
+        {formatCurrencyValue(order.total)}
       </TableCell>
       <TableCell>
         <Button variant="outline" size="xs">
