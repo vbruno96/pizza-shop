@@ -19,6 +19,7 @@ import {
   TableHeader,
   TableRow,
 } from '@/components/ui/table'
+import { OrderDetailsSkeleton } from '@/pages/app/orders/order-dataills-skeleton'
 import { formatCurrencyValue } from '@/utils/formatCurrencyValue'
 
 interface OrderDetailProps {
@@ -39,7 +40,7 @@ export function OrderDetail({ orderId, open }: OrderDetailProps) {
         <DialogTitle>Pedido: {orderId}</DialogTitle>
         <DialogDescription>Detalhes do pedido</DialogDescription>
       </DialogHeader>
-      {order && (
+      {order ? (
         <div className="space-y-6">
           <Table>
             <TableBody>
@@ -123,6 +124,8 @@ export function OrderDetail({ orderId, open }: OrderDetailProps) {
             </TableFooter>
           </Table>
         </div>
+      ) : (
+        <OrderDetailsSkeleton />
       )}
     </DialogContent>
   )
