@@ -95,7 +95,7 @@ export function StoreProfileDialog() {
 
       toast.success('Perfil atualizado com sucesso!')
     } catch (error) {
-      toast.error('Falha ao atuializar o perfil, tente novamente!')
+      toast.error('Falha ao atualizar o perfil, tente novamente!')
     }
   }
 
@@ -118,7 +118,7 @@ export function StoreProfileDialog() {
           </div>
 
           <div className="grid grid-cols-4 items-center gap-4">
-            <Label className="text-right" htmlFor="name">
+            <Label className="text-right" htmlFor="description">
               Descrição
             </Label>
             <Textarea
