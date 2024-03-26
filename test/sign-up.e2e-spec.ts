@@ -12,7 +12,7 @@ test('sing up successfuly', async ({ page }) => {
 
   const toast = page.getByText('Restaurante cadastrado com sucesso!')
 
-  expect(toast).toBeVisible()
+  await expect(toast).toBeVisible()
 })
 
 test('sing up successfy with redirec to login page and fill email field', async ({
@@ -44,7 +44,7 @@ test('sing up error', async ({ page }) => {
 
   const toast = page.getByText('Erro ao cadastrar restaurante.')
 
-  expect(toast).toBeVisible()
+  await expect(toast).toBeVisible()
 })
 
 test('navgate to login page', async ({ page }) => {

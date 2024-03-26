@@ -20,9 +20,7 @@ test('update profile successfuly', async ({ page }) => {
 
   await page.getByRole('button', { name: 'Close' }).click()
 
-  await page.waitForTimeout(250)
-
-  expect(page.getByRole('button', { name: 'Pizza Shop' })).toBeVisible()
+  await expect(page.getByRole('button', { name: 'Pizza Shop' })).toBeVisible()
 })
 
 test('update profile with error', async ({ page }) => {
@@ -45,7 +43,5 @@ test('update profile with error', async ({ page }) => {
 
   await page.getByRole('button', { name: 'Close' }).click()
 
-  await page.waitForTimeout(250)
-
-  expect(page.getByRole('button', { name: 'John Pizza' })).toBeVisible()
+  await expect(page.getByRole('button', { name: 'John Pizza' })).toBeVisible()
 })
